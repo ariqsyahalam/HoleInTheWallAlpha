@@ -11,6 +11,8 @@
 		447C78712BFB0FAA0066D390 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447C78702BFB0FAA0066D390 /* ContentView.swift */; };
 		447C78732BFB0FAB0066D390 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 447C78722BFB0FAB0066D390 /* Assets.xcassets */; };
 		447C78762BFB0FAB0066D390 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 447C78752BFB0FAB0066D390 /* Preview Assets.xcassets */; };
+		447C787E2BFB11790066D390 /* StagesScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447C787D2BFB11790066D390 /* StagesScreenView.swift */; };
+		447C78812BFB133B0066D390 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447C78802BFB133B0066D390 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,9 @@
 		447C78722BFB0FAB0066D390 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		447C78752BFB0FAB0066D390 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		447C78772BFB0FAB0066D390 /* HoleInTheWallAlpha.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HoleInTheWallAlpha.entitlements; sourceTree = "<group>"; };
+		447C787D2BFB11790066D390 /* StagesScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StagesScreenView.swift; sourceTree = "<group>"; };
+		447C787F2BFB13040066D390 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		447C78802BFB133B0066D390 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,11 +57,15 @@
 		447C786D2BFB0FAA0066D390 /* HoleInTheWallAlpha */ = {
 			isa = PBXGroup;
 			children = (
+				447C78842BFB13DF0066D390 /* Models */,
+				447C78832BFB13D80066D390 /* Views */,
+				447C787F2BFB13040066D390 /* Info.plist */,
 				447C786E2BFB0FAA0066D390 /* HoleInTheWallAlphaApp.swift */,
-				447C78702BFB0FAA0066D390 /* ContentView.swift */,
 				447C78722BFB0FAB0066D390 /* Assets.xcassets */,
 				447C78772BFB0FAB0066D390 /* HoleInTheWallAlpha.entitlements */,
 				447C78742BFB0FAB0066D390 /* Preview Content */,
+				447C78802BFB133B0066D390 /* AppDelegate.swift */,
+				447C78702BFB0FAA0066D390 /* ContentView.swift */,
 			);
 			path = HoleInTheWallAlpha;
 			sourceTree = "<group>";
@@ -67,6 +76,21 @@
 				447C78752BFB0FAB0066D390 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		447C78832BFB13D80066D390 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				447C787D2BFB11790066D390 /* StagesScreenView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		447C78842BFB13DF0066D390 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +163,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				447C78812BFB133B0066D390 /* AppDelegate.swift in Sources */,
+				447C787E2BFB11790066D390 /* StagesScreenView.swift in Sources */,
 				447C78712BFB0FAA0066D390 /* ContentView.swift in Sources */,
 				447C786F2BFB0FAA0066D390 /* HoleInTheWallAlphaApp.swift in Sources */,
 			);
@@ -279,6 +305,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HoleInTheWallAlpha/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -306,6 +333,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HoleInTheWallAlpha/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
