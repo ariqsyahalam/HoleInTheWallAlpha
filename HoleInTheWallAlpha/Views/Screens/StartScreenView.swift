@@ -35,15 +35,20 @@ struct StartScreenView: View {
                     }
                     
                     VStack(spacing:12) {
-                        NavigationLinkComponent(destination: StagesScreenView(), label: {
+                        NavigationLink(destination: StagesScreenView()) {
                             Text("RESUME")
-                        })
-                        NavigationLinkComponent(destination: StagesScreenView(), label: {
-                            Text("START")
-                        })
-                        NavigationLinkComponent(destination: StagesScreenView(), label: {
-                            Text("EXIT")
-                        })
+                                .aText(.button)
+                        }.aButton(.primary)
+                        
+                        NavigationLink(destination: StagesScreenView()) {
+                            Text("RESUME")
+                                .aText(.button)
+                        }.aButton(.primary)
+                        
+                        NavigationLink(destination: StagesScreenView()) {
+                            Text("RESUME")
+                                .aText(.button)
+                        }.aButton(.primary)
                         
                     }
                     

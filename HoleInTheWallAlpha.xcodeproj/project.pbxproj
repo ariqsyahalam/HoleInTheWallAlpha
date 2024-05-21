@@ -16,7 +16,9 @@
 		447C78882BFB18DC0066D390 /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447C78872BFB18DC0066D390 /* Shape.swift */; };
 		447C788A2BFB19D20066D390 /* StageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447C78892BFB19D20066D390 /* StageModel.swift */; };
 		447C788E2BFC53470066D390 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447C788D2BFC53470066D390 /* CameraView.swift */; };
-		447C78902BFC6B870066D390 /* NavigationLinkComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447C788F2BFC6B870066D390 /* NavigationLinkComponent.swift */; };
+		447C78982BFC73460066D390 /* PoseDetectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447C78972BFC73460066D390 /* PoseDetectionViewModel.swift */; };
+		447C78A12BFC85EA0066D390 /* AButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447C78A02BFC85EA0066D390 /* AButtonStyle.swift */; };
+		447C78A52BFC865A0066D390 /* ATextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447C78A42BFC865A0066D390 /* ATextStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,7 +34,9 @@
 		447C78872BFB18DC0066D390 /* Shape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shape.swift; sourceTree = "<group>"; };
 		447C78892BFB19D20066D390 /* StageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageModel.swift; sourceTree = "<group>"; };
 		447C788D2BFC53470066D390 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
-		447C788F2BFC6B870066D390 /* NavigationLinkComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationLinkComponent.swift; sourceTree = "<group>"; };
+		447C78972BFC73460066D390 /* PoseDetectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseDetectionViewModel.swift; sourceTree = "<group>"; };
+		447C78A02BFC85EA0066D390 /* AButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AButtonStyle.swift; sourceTree = "<group>"; };
+		447C78A42BFC865A0066D390 /* ATextStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATextStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,7 @@
 				447C78742BFB0FAB0066D390 /* Preview Content */,
 				447C78842BFB13DF0066D390 /* Models */,
 				447C78832BFB13D80066D390 /* Views */,
+				447C78962BFC72F90066D390 /* ViewModels */,
 			);
 			path = HoleInTheWallAlpha;
 			sourceTree = "<group>";
@@ -88,7 +93,7 @@
 		447C78832BFB13D80066D390 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				447C78912BFC6CD80066D390 /* Components */,
+				447C789B2BFC74D10066D390 /* Styles */,
 				447C78922BFC6CE00066D390 /* Scenes */,
 				447C78932BFC6CED0066D390 /* Screens */,
 			);
@@ -102,14 +107,6 @@
 				447C78892BFB19D20066D390 /* StageModel.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		447C78912BFC6CD80066D390 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				447C788F2BFC6B870066D390 /* NavigationLinkComponent.swift */,
-			);
-			path = Components;
 			sourceTree = "<group>";
 		};
 		447C78922BFC6CE00066D390 /* Scenes */ = {
@@ -127,6 +124,23 @@
 				447C78852BFB168B0066D390 /* StartScreenView.swift */,
 			);
 			path = Screens;
+			sourceTree = "<group>";
+		};
+		447C78962BFC72F90066D390 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				447C78972BFC73460066D390 /* PoseDetectionViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		447C789B2BFC74D10066D390 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				447C78A02BFC85EA0066D390 /* AButtonStyle.swift */,
+				447C78A42BFC865A0066D390 /* ATextStyle.swift */,
+			);
+			path = Styles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,10 +214,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				447C788A2BFB19D20066D390 /* StageModel.swift in Sources */,
-				447C78902BFC6B870066D390 /* NavigationLinkComponent.swift in Sources */,
+				447C78A12BFC85EA0066D390 /* AButtonStyle.swift in Sources */,
 				447C78882BFB18DC0066D390 /* Shape.swift in Sources */,
 				447C788E2BFC53470066D390 /* CameraView.swift in Sources */,
+				447C78A52BFC865A0066D390 /* ATextStyle.swift in Sources */,
 				447C787E2BFB11790066D390 /* StagesScreenView.swift in Sources */,
+				447C78982BFC73460066D390 /* PoseDetectionViewModel.swift in Sources */,
 				447C78712BFB0FAA0066D390 /* ContentView.swift in Sources */,
 				447C786F2BFB0FAA0066D390 /* HoleInTheWallAlphaApp.swift in Sources */,
 				447C78862BFB168B0066D390 /* StartScreenView.swift in Sources */,
