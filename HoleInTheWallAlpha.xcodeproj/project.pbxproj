@@ -12,12 +12,11 @@
 		447C78732BFB0FAB0066D390 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 447C78722BFB0FAB0066D390 /* Assets.xcassets */; };
 		447C78762BFB0FAB0066D390 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 447C78752BFB0FAB0066D390 /* Preview Assets.xcassets */; };
 		447C787E2BFB11790066D390 /* StagesScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447C787D2BFB11790066D390 /* StagesScreenView.swift */; };
-		447C78812BFB133B0066D390 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447C78802BFB133B0066D390 /* AppDelegate.swift */; };
 		447C78862BFB168B0066D390 /* StartScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447C78852BFB168B0066D390 /* StartScreenView.swift */; };
 		447C78882BFB18DC0066D390 /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447C78872BFB18DC0066D390 /* Shape.swift */; };
 		447C788A2BFB19D20066D390 /* StageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447C78892BFB19D20066D390 /* StageModel.swift */; };
-		447C788C2BFC52CB0066D390 /* VideoCaptureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447C788B2BFC52CB0066D390 /* VideoCaptureController.swift */; };
 		447C788E2BFC53470066D390 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447C788D2BFC53470066D390 /* CameraView.swift */; };
+		447C78902BFC6B870066D390 /* NavigationLinkComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447C788F2BFC6B870066D390 /* NavigationLinkComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,12 +28,11 @@
 		447C78772BFB0FAB0066D390 /* HoleInTheWallAlpha.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HoleInTheWallAlpha.entitlements; sourceTree = "<group>"; };
 		447C787D2BFB11790066D390 /* StagesScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StagesScreenView.swift; sourceTree = "<group>"; };
 		447C787F2BFB13040066D390 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		447C78802BFB133B0066D390 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		447C78852BFB168B0066D390 /* StartScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreenView.swift; sourceTree = "<group>"; };
 		447C78872BFB18DC0066D390 /* Shape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shape.swift; sourceTree = "<group>"; };
 		447C78892BFB19D20066D390 /* StageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageModel.swift; sourceTree = "<group>"; };
-		447C788B2BFC52CB0066D390 /* VideoCaptureController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCaptureController.swift; sourceTree = "<group>"; };
 		447C788D2BFC53470066D390 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		447C788F2BFC6B870066D390 /* NavigationLinkComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationLinkComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,16 +65,14 @@
 		447C786D2BFB0FAA0066D390 /* HoleInTheWallAlpha */ = {
 			isa = PBXGroup;
 			children = (
-				447C788B2BFC52CB0066D390 /* VideoCaptureController.swift */,
+				447C786E2BFB0FAA0066D390 /* HoleInTheWallAlphaApp.swift */,
+				447C78702BFB0FAA0066D390 /* ContentView.swift */,
+				447C78772BFB0FAB0066D390 /* HoleInTheWallAlpha.entitlements */,
+				447C787F2BFB13040066D390 /* Info.plist */,
+				447C78722BFB0FAB0066D390 /* Assets.xcassets */,
+				447C78742BFB0FAB0066D390 /* Preview Content */,
 				447C78842BFB13DF0066D390 /* Models */,
 				447C78832BFB13D80066D390 /* Views */,
-				447C787F2BFB13040066D390 /* Info.plist */,
-				447C786E2BFB0FAA0066D390 /* HoleInTheWallAlphaApp.swift */,
-				447C78722BFB0FAB0066D390 /* Assets.xcassets */,
-				447C78772BFB0FAB0066D390 /* HoleInTheWallAlpha.entitlements */,
-				447C78742BFB0FAB0066D390 /* Preview Content */,
-				447C78802BFB133B0066D390 /* AppDelegate.swift */,
-				447C78702BFB0FAA0066D390 /* ContentView.swift */,
 			);
 			path = HoleInTheWallAlpha;
 			sourceTree = "<group>";
@@ -92,9 +88,9 @@
 		447C78832BFB13D80066D390 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				447C788D2BFC53470066D390 /* CameraView.swift */,
-				447C787D2BFB11790066D390 /* StagesScreenView.swift */,
-				447C78852BFB168B0066D390 /* StartScreenView.swift */,
+				447C78912BFC6CD80066D390 /* Components */,
+				447C78922BFC6CE00066D390 /* Scenes */,
+				447C78932BFC6CED0066D390 /* Screens */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -106,6 +102,31 @@
 				447C78892BFB19D20066D390 /* StageModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		447C78912BFC6CD80066D390 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				447C788F2BFC6B870066D390 /* NavigationLinkComponent.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		447C78922BFC6CE00066D390 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				447C788D2BFC53470066D390 /* CameraView.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		447C78932BFC6CED0066D390 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				447C787D2BFB11790066D390 /* StagesScreenView.swift */,
+				447C78852BFB168B0066D390 /* StartScreenView.swift */,
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,13 +200,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				447C788A2BFB19D20066D390 /* StageModel.swift in Sources */,
-				447C78812BFB133B0066D390 /* AppDelegate.swift in Sources */,
+				447C78902BFC6B870066D390 /* NavigationLinkComponent.swift in Sources */,
 				447C78882BFB18DC0066D390 /* Shape.swift in Sources */,
 				447C788E2BFC53470066D390 /* CameraView.swift in Sources */,
 				447C787E2BFB11790066D390 /* StagesScreenView.swift in Sources */,
 				447C78712BFB0FAA0066D390 /* ContentView.swift in Sources */,
 				447C786F2BFB0FAA0066D390 /* HoleInTheWallAlphaApp.swift in Sources */,
-				447C788C2BFC52CB0066D390 /* VideoCaptureController.swift in Sources */,
 				447C78862BFB168B0066D390 /* StartScreenView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

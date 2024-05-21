@@ -11,10 +11,8 @@ struct StagesScreenView: View {
     var body: some View {
         ZStack {
             Group{ // Background
-//                CameraView()
-//                    .frame(width: 640, height: 480)
-//                    .cornerRadius(10)
-//                    .shadow(radius: 10)
+              CameraView()
+                .edgesIgnoringSafeArea(.all)
                 Image("layerStage-1")
                 Image("bgStoneWall2")
                 Image("bgTopBrickWall")
