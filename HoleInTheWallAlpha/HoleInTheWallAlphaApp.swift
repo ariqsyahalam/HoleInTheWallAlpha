@@ -9,8 +9,6 @@ import SwiftUI
 
 @main
 struct HoleInTheWallAlphaApp: App {
-//    @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
-    @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
 
     var body: some Scene {
         WindowGroup {

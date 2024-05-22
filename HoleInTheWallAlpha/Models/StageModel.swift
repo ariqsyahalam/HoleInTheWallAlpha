@@ -9,6 +9,4 @@ import Foundation
 
 class StageModel {
     var name: String?
-//    var shape: Shape()
-    
 }
