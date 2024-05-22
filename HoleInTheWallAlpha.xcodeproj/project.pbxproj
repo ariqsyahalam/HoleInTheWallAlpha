@@ -19,6 +19,8 @@
 		447C78982BFC73460066D390 /* PoseDetectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447C78972BFC73460066D390 /* PoseDetectionViewModel.swift */; };
 		447C78A12BFC85EA0066D390 /* AButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447C78A02BFC85EA0066D390 /* AButtonStyle.swift */; };
 		447C78A52BFC865A0066D390 /* ATextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447C78A42BFC865A0066D390 /* ATextStyle.swift */; };
+		447C78A72BFD03730066D390 /* AspectRatioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447C78A62BFD03730066D390 /* AspectRatioView.swift */; };
+		447C78A92BFDA2320066D390 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447C78A82BFDA2320066D390 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,8 @@
 		447C78972BFC73460066D390 /* PoseDetectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseDetectionViewModel.swift; sourceTree = "<group>"; };
 		447C78A02BFC85EA0066D390 /* AButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AButtonStyle.swift; sourceTree = "<group>"; };
 		447C78A42BFC865A0066D390 /* ATextStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATextStyle.swift; sourceTree = "<group>"; };
+		447C78A62BFD03730066D390 /* AspectRatioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectRatioView.swift; sourceTree = "<group>"; };
+		447C78A82BFDA2320066D390 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +82,7 @@
 				447C78842BFB13DF0066D390 /* Models */,
 				447C78832BFB13D80066D390 /* Views */,
 				447C78962BFC72F90066D390 /* ViewModels */,
+				447C78A82BFDA2320066D390 /* AppDelegate.swift */,
 			);
 			path = HoleInTheWallAlpha;
 			sourceTree = "<group>";
@@ -96,6 +101,7 @@
 				447C789B2BFC74D10066D390 /* Styles */,
 				447C78922BFC6CE00066D390 /* Scenes */,
 				447C78932BFC6CED0066D390 /* Screens */,
+				447C78A62BFD03730066D390 /* AspectRatioView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -213,11 +219,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				447C78A92BFDA2320066D390 /* AppDelegate.swift in Sources */,
 				447C788A2BFB19D20066D390 /* StageModel.swift in Sources */,
 				447C78A12BFC85EA0066D390 /* AButtonStyle.swift in Sources */,
 				447C78882BFB18DC0066D390 /* Shape.swift in Sources */,
 				447C788E2BFC53470066D390 /* CameraView.swift in Sources */,
 				447C78A52BFC865A0066D390 /* ATextStyle.swift in Sources */,
+				447C78A72BFD03730066D390 /* AspectRatioView.swift in Sources */,
 				447C787E2BFB11790066D390 /* StagesScreenView.swift in Sources */,
 				447C78982BFC73460066D390 /* PoseDetectionViewModel.swift in Sources */,
 				447C78712BFB0FAA0066D390 /* ContentView.swift in Sources */,

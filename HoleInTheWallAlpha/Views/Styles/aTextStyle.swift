@@ -6,36 +6,42 @@
 //
 
 import SwiftUI
+struct ATextStyle {
 
-enum TextStyle {
-    case h1
-    case h2
-    case h3
-    case h4
-    case h5
-    case h6
-    case h7
-    case paragraph
-    case caption
-    case title
-    case subtitle
-    case button
+    enum TextStyle {
+        case h1
+        case h2
+        case h3
+        case h4
+        case h5
+        case h6
+        case h7
+        case paragraph
+        case caption
+        case title
+        case subtitle
+        case button
+    }
+    
+    enum TextWeight {
+        case light
+        case regular
+        case bold
+    }
 }
 
 extension View {
-    
-    func aText(_ style: TextStyle) -> some View {
+    func aText(_ style: ATextStyle.TextStyle) -> some View {
         switch style {
         case .button:
             return AnyView(
                 self
-                    .font(
-                        Font.custom("Enriqueta", size: 48)
-                            .weight(.bold)
-                    )
+                    .font(Font.custom("Enriqueta", size: 48)
+                        .weight(.bold))
                     .multilineTextAlignment(.center)
                     .foregroundColor(Color(red: 0.42, green: 0.29, blue: 0.29))
             )
+            
         case .h1:
             return AnyView(
                 self
@@ -43,8 +49,6 @@ extension View {
                         Font.custom("Enriqueta", size: 48)
                             .weight(.bold)
                     )
-                    .multilineTextAlignment(.center)
-                    .foregroundColor(Color(red: 0.42, green: 0.29, blue: 0.29))
             )
         case .h2:
             return AnyView(
@@ -53,8 +57,6 @@ extension View {
                         Font.custom("Enriqueta", size: 48)
                             .weight(.bold)
                     )
-                    .multilineTextAlignment(.center)
-                    .foregroundColor(Color(red: 0.42, green: 0.29, blue: 0.29))
             )
         case .h3:
             return AnyView(
@@ -63,8 +65,6 @@ extension View {
                         Font.custom("Enriqueta", size: 48)
                             .weight(.bold)
                     )
-                    .multilineTextAlignment(.center)
-                    .foregroundColor(Color(red: 0.42, green: 0.29, blue: 0.29))
             )
         case .h4:
             return AnyView(
@@ -73,8 +73,6 @@ extension View {
                         Font.custom("Enriqueta", size: 48)
                             .weight(.bold)
                     )
-                    .multilineTextAlignment(.center)
-                    .foregroundColor(Color(red: 0.42, green: 0.29, blue: 0.29))
             )
         case .h5:
             return AnyView(
@@ -83,8 +81,6 @@ extension View {
                         Font.custom("Enriqueta", size: 48)
                             .weight(.bold)
                     )
-                    .multilineTextAlignment(.center)
-                    .foregroundColor(Color(red: 0.42, green: 0.29, blue: 0.29))
             )
         case .h6:
             return AnyView(
@@ -93,8 +89,6 @@ extension View {
                         Font.custom("Enriqueta", size: 48)
                             .weight(.bold)
                     )
-                    .multilineTextAlignment(.center)
-                    .foregroundColor(Color(red: 0.42, green: 0.29, blue: 0.29))
             )
         case .h7:
             return AnyView(
@@ -103,18 +97,14 @@ extension View {
                         Font.custom("Enriqueta", size: 48)
                             .weight(.bold)
                     )
-                    .multilineTextAlignment(.center)
-                    .foregroundColor(Color(red: 0.42, green: 0.29, blue: 0.29))
             )
         case .paragraph:
             return AnyView(
                 self
                     .font(
-                        Font.custom("Enriqueta", size: 48)
+                        Font.custom("Enriqueta", size: 12)
                             .weight(.bold)
                     )
-                    .multilineTextAlignment(.center)
-                    .foregroundColor(Color(red: 0.42, green: 0.29, blue: 0.29))
             )
         case .caption:
             return AnyView(
@@ -123,18 +113,14 @@ extension View {
                         Font.custom("Enriqueta", size: 48)
                             .weight(.bold)
                     )
-                    .multilineTextAlignment(.center)
-                    .foregroundColor(Color(red: 0.42, green: 0.29, blue: 0.29))
             )
         case .title:
             return AnyView(
                 self
                     .font(
-                        Font.custom("Enriqueta", size: 48)
+                        Font.custom("Enriqueta", size: 128)
                             .weight(.bold)
                     )
-                    .multilineTextAlignment(.center)
-                    .foregroundColor(Color(red: 0.42, green: 0.29, blue: 0.29))
             )
         case .subtitle:
             return AnyView(
@@ -143,8 +129,6 @@ extension View {
                         Font.custom("Enriqueta", size: 48)
                             .weight(.bold)
                     )
-                    .multilineTextAlignment(.center)
-                    .foregroundColor(Color(red: 0.42, green: 0.29, blue: 0.29))
             )
         }
     }

@@ -31,7 +31,6 @@ class PoseDetectionViewModel: ObservableObject {
     private func processObservation(_ observation: VNHumanBodyPoseObservation) {
         do {
             let recognizedPoints = try observation.recognizedPoints(forGroupKey: .all)
-            // Process the recognized points
             print(recognizedPoints)
         } catch {
             print("Error processing observation: \(error)")

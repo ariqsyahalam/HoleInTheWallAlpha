@@ -36,7 +36,7 @@ struct CameraView: NSViewControllerRepresentable {
             }
 
             let videoLayer = AVCaptureVideoPreviewLayer(session: captureSession!)
-            videoLayer.frame = CGRect(x: 0, y: 0, width: 1728, height: 1117) // Set frame to specific size
+            videoLayer.frame = CGRect(x: 0, y: 0, width: 688, height: 718)
             videoLayer.videoGravity = .resizeAspectFill
 
             view.wantsLayer = true

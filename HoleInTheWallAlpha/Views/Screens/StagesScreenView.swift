@@ -11,39 +11,20 @@ struct StagesScreenView: View {
     var body: some View {
         ZStack {
             Group{ // Background
-              CameraView()
-                .edgesIgnoringSafeArea(.all)
-                Image("layerStage-1")
-                Image("bgStoneWall2")
-                Image("bgTopBrickWall")
+                Image("bgStage")
+                    .ignoresSafeArea()
+                VStack(alignment: .center) {
+                    CameraView()
+                        .frame(width: 688, height: 718)
+                        .offset(CGSize(width: 10, height: 76.0))
+                }
+                Image("stageWall-1")
+
             }
             VStack {
-                HStack(spacing: 360) {
-                    Text("00:10")
-                        .font(
-                            Font.custom("Enriqueta", size: 64)
-                                .weight(.bold)
-                        )
-                        .foregroundColor(.white)
-                    Text("STAGE 1")
-                        .font(
-                            Font.custom("Enriqueta", size: 64)
-                                .weight(.bold)
-                        )
-                        .foregroundColor(.white)
-                    Text("􀊵􀊵􀊵")
-                        .font(
-                            Font.custom("Enriqueta", size: 64)
-                                .weight(.bold)
-                        )
-                        .foregroundColor(.white)
-                }
-                .padding()
-                Spacer()
-                Text("EASY")
                 
             }
-        }
+        }.ignoresSafeArea()
     }
 }
 
