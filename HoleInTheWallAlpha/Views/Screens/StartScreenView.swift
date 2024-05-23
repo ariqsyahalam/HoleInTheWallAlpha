@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct StartScreenView: View {
+    let musicPlayer = MusicPlayer()
+    
     var body: some View {
         NavigationStack {
             ZStack {
@@ -19,13 +21,7 @@ struct StartScreenView: View {
                     VStack {
                         VStack(spacing: -36) {
                             Text("HOLE")
-                                .font(
-                                    Font.custom("SF Mono", size: 200)
-                                        .weight(.bold)
-                                )
-                                .multilineTextAlignment(.center)
-                                .foregroundColor(.white)
-                            //                                .frame(width: 495, height: 205, alignment: .top)
+                                .aText(.title)
                             Text("IN THE")
                                 .font(
                                     Font.custom("SF Mono", size: 96)
@@ -35,7 +31,6 @@ struct StartScreenView: View {
                                 .kerning(27.84)
                                 .multilineTextAlignment(.center)
                                 .foregroundColor(.white)
-                            //                                .frame(width: 496, height: 69, alignment: .top)
                             Text("WALL")
                                 .font(
                                     Font.custom("SF Mono", size: 200)
@@ -43,14 +38,13 @@ struct StartScreenView: View {
                                 )
                                 .multilineTextAlignment(.center)
                                 .foregroundColor(.white)
-                            //                                .frame(width: 495, alignment: .top)
                         }
                         .padding(.bottom, 8)
                         NavigationLink(destination: StagesScreenView()) {
                             Text("START")
                                 .font(
-                                Font.custom("SF Mono", size: 32)
-                                .weight(.bold)
+                                    Font.custom("SF Mono", size: 32)
+                                        .weight(.bold)
                                 )
                                 .multilineTextAlignment(.center)
                                 .foregroundColor(.black)
@@ -67,8 +61,15 @@ struct StartScreenView: View {
                 .navigationTitle("Start Screen")
             }
         }
+        .onAppear {
+//            musicPlayer.playBackgroundMusic(musicName: "tanteculikakudong", extensionType: "mp3")
+        }
+        .onDisappear{
+            
+        }
         .ignoresSafeArea()
     }
+    
 }
 
 #Preview {

@@ -7,7 +7,7 @@
 
 import SwiftUI
 struct ATextStyle {
-
+    
     enum TextStyle {
         case h1
         case h2
@@ -21,6 +21,7 @@ struct ATextStyle {
         case title
         case subtitle
         case button
+        case frontTitle
     }
     
     enum TextWeight {
@@ -50,6 +51,7 @@ extension View {
                             .weight(.bold)
                     )
             )
+            
         case .h2:
             return AnyView(
                 self
@@ -58,6 +60,7 @@ extension View {
                             .weight(.bold)
                     )
             )
+            
         case .h3:
             return AnyView(
                 self
@@ -114,14 +117,6 @@ extension View {
                             .weight(.bold)
                     )
             )
-        case .title:
-            return AnyView(
-                self
-                    .font(
-                        Font.custom("Enriqueta", size: 128)
-                            .weight(.bold)
-                    )
-            )
         case .subtitle:
             return AnyView(
                 self
@@ -129,6 +124,21 @@ extension View {
                         Font.custom("Enriqueta", size: 48)
                             .weight(.bold)
                     )
+            )
+            
+        case .title:
+            return AnyView(
+                self.font(
+                    Font.custom("SF Mono", size: 200)
+                        .weight(.bold)
+                )
+                .multilineTextAlignment(.center)
+                .foregroundColor(.white)
+            )
+            
+        default:
+            return AnyView(
+                self
             )
         }
     }
