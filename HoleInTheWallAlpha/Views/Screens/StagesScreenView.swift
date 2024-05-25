@@ -13,22 +13,20 @@ struct StagesScreenView: View {
     @State var timer: Timer? = nil
     @State private var inputImage: NSImage? = NSImage(named: "testPose")
     @State private var predictionResult: String = ""
-    
+    @State private var image: NSImage?
+    @State private var cameraViewController: CameraViewController?
+
     let model = ModelPose1() // Nama model yang dihasilkan oleh Xcode
-    //    @StateObject private var viewModel = PoseDetectionViewModel()
-    
-    //    let model = ModelPose1()
     
     var body: some View {
         ZStack(alignment: .center) {
-            Group{ // Background
+            ZStack { // Background
                 Image("bgStage")
                     .ignoresSafeArea()
-                CameraView()
+                CameraView(cameraViewController: $cameraViewController)
                     .frame(width: 688, height: 718)
                     .offset(CGSize(width: 10, height: 76.0))
                 Image("stageWall-1")
-                
             }
             VStack {
                 
@@ -104,6 +102,7 @@ struct StagesScreenView: View {
                 self.timeRemaining -= 1
             } else {
                 timer.invalidate()  // Stop the timer when it reaches 0
+                capturePhoto()
             }
         }
     }
@@ -123,47 +122,58 @@ struct StagesScreenView: View {
             predictionResult = "Prediksi gagal: \(error.localizedDescription)"
         }
     }
+    
+    func capturePhoto() {
+        cameraViewController?.capturePhoto { image in
+            self.image = image
+            if let image = image, let data = image.tiffRepresentation {
+                let filename = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("captured_photo.tiff")
+                try? data.write(to: filename)
+                print(filename)
+            }
+        }
+    }
 }
 
 func buffer(from image: NSImage) -> CVPixelBuffer? {
     // Implementasi fungsi buffer(from:) sama seperti sebelumnya
     guard let tiffData = image.tiffRepresentation,
-             let bitmapImage = NSBitmapImageRep(data: tiffData) else {
-           return nil
-       }
-       
-       let width = 299
-       let height = 299
-       
-       let attrs = [
-           kCVPixelBufferCGImageCompatibilityKey: kCFBooleanTrue,
-           kCVPixelBufferCGBitmapContextCompatibilityKey: kCFBooleanTrue
-       ] as CFDictionary
-       
-       var pixelBuffer: CVPixelBuffer?
-       let status = CVPixelBufferCreate(kCFAllocatorDefault, width, height, kCVPixelFormatType_32ARGB, attrs, &pixelBuffer)
-       
-       guard status == kCVReturnSuccess, let buffer = pixelBuffer else {
-           return nil
-       }
-       
-       CVPixelBufferLockBaseAddress(buffer, .readOnly)
-       guard let context = CGContext(data: CVPixelBufferGetBaseAddress(buffer),
-                                     width: width,
-                                     height: height,
-                                     bitsPerComponent: 8,
-                                     bytesPerRow: CVPixelBufferGetBytesPerRow(buffer),
-                                     space: CGColorSpaceCreateDeviceRGB(),
-                                     bitmapInfo: CGImageAlphaInfo.noneSkipFirst.rawValue) else {
-           CVPixelBufferUnlockBaseAddress(buffer, .readOnly)
-           return nil
-       }
-       
-       let imageRect = CGRect(x: 0, y: 0, width: width, height: height)
-       context.draw(bitmapImage.cgImage!, in: imageRect)
-       CVPixelBufferUnlockBaseAddress(buffer, .readOnly)
-       
-       return buffer
+          let bitmapImage = NSBitmapImageRep(data: tiffData) else {
+        return nil
+    }
+    
+    let width = 299
+    let height = 299
+    
+    let attrs = [
+        kCVPixelBufferCGImageCompatibilityKey: kCFBooleanTrue,
+        kCVPixelBufferCGBitmapContextCompatibilityKey: kCFBooleanTrue
+    ] as CFDictionary
+    
+    var pixelBuffer: CVPixelBuffer?
+    let status = CVPixelBufferCreate(kCFAllocatorDefault, width, height, kCVPixelFormatType_32ARGB, attrs, &pixelBuffer)
+    
+    guard status == kCVReturnSuccess, let buffer = pixelBuffer else {
+        return nil
+    }
+    
+    CVPixelBufferLockBaseAddress(buffer, .readOnly)
+    guard let context = CGContext(data: CVPixelBufferGetBaseAddress(buffer),
+                                  width: width,
+                                  height: height,
+                                  bitsPerComponent: 8,
+                                  bytesPerRow: CVPixelBufferGetBytesPerRow(buffer),
+                                  space: CGColorSpaceCreateDeviceRGB(),
+                                  bitmapInfo: CGImageAlphaInfo.noneSkipFirst.rawValue) else {
+        CVPixelBufferUnlockBaseAddress(buffer, .readOnly)
+        return nil
+    }
+    
+    let imageRect = CGRect(x: 0, y: 0, width: width, height: height)
+    context.draw(bitmapImage.cgImage!, in: imageRect)
+    CVPixelBufferUnlockBaseAddress(buffer, .readOnly)
+    
+    return buffer
 }
 
 #Preview {

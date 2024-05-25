@@ -8,8 +8,9 @@
 import SwiftUI
 import AVFoundation
 
-class CameraViewController: NSViewController {
+class CameraViewController: NSViewController, AVCapturePhotoCaptureDelegate {
     var captureSession: AVCaptureSession?
+    var photoOutput: AVCapturePhotoOutput?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,8 +29,14 @@ class CameraViewController: NSViewController {
             captureSession.addInput(videoDeviceInput!)
         }
         
+        photoOutput = AVCapturePhotoOutput()
+        if let captureSession = captureSession,
+           captureSession.canAddOutput(photoOutput!) {
+            captureSession.addOutput(photoOutput!)
+        }
+        
         let videoLayer = AVCaptureVideoPreviewLayer(session: captureSession!)
-        videoLayer.frame = CGRect(x: 0, y: 0, width: 688, height: 718)
+        videoLayer.frame = view.bounds
         videoLayer.videoGravity = .resizeAspectFill
         videoLayer.setAffineTransform(CGAffineTransform(scaleX: -1, y: 1))
         
@@ -38,5 +45,22 @@ class CameraViewController: NSViewController {
         view.layer?.addSublayer(videoLayer)
         
         captureSession?.startRunning()
+    }
+    
+    func capturePhoto(completion: @escaping (NSImage?) -> Void) {
+        let settings = AVCapturePhotoSettings()
+        photoOutput?.capturePhoto(with: settings, delegate: self)
+        self.photoCaptureCompletionBlock = completion
+    }
+    
+    private var photoCaptureCompletionBlock: ((NSImage?) -> Void)?
+    
+    func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
+        guard let imageData = photo.fileDataRepresentation() else {
+            self.photoCaptureCompletionBlock?(nil)
+            return
+        }
+        let image = NSImage(data: imageData)
+        self.photoCaptureCompletionBlock?(image)
     }
 }

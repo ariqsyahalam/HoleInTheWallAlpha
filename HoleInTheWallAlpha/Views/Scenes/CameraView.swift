@@ -6,19 +6,34 @@
 //
 
 import SwiftUI
-import AVFoundation
 
 struct CameraView: NSViewControllerRepresentable {
-    func makeNSViewController(context: Context) -> NSViewController {
-        return CameraViewController()
+    @Binding var cameraViewController: CameraViewController?
+    
+    class Coordinator: NSObject {
+        var parent: CameraView
+        
+        init(parent: CameraView) {
+            self.parent = parent
+        }
     }
 
-    func updateNSViewController(_ nsViewController: NSViewController, context: Context) {}
+    func makeCoordinator() -> Coordinator {
+        Coordinator(parent: self)
+    }
 
+    func makeNSViewController(context: Context) -> CameraViewController {
+        let viewController = CameraViewController()
+        DispatchQueue.main.async {
+            self.cameraViewController = viewController
+        }
+        return viewController
+    }
 
+    func updateNSViewController(_ nsViewController: CameraViewController, context: Context) {}
 }
 
 
-#Preview {
-    CameraView()
-}
+//#Preview {
+//    CameraView(cameraViewController: <#Binding<CameraViewController?>#>)
+//}
