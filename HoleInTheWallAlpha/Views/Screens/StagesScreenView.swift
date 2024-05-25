@@ -15,6 +15,7 @@ struct StagesScreenView: View {
     @State private var predictionResult: String = ""
     @State private var image: NSImage?
     @State private var cameraViewController: CameraViewController?
+    @State private var capturedImageURL: URL?
 
     let model = ModelPose1() // Nama model yang dihasilkan oleh Xcode
     
@@ -89,7 +90,6 @@ struct StagesScreenView: View {
         .ignoresSafeArea()
         .onAppear {
             startTimer()  // Start the timer when the view appears
-            predict()
         }
     }
     
@@ -107,8 +107,23 @@ struct StagesScreenView: View {
         }
     }
     
+    func capturePhoto() {
+        cameraViewController?.capturePhoto { image in
+            self.image = image
+            if let image = image, let data = image.tiffRepresentation {
+                let filename = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("captured_photo.tiff")
+                try? data.write(to: filename)
+                self.capturedImageURL = filename
+                print(filename)
+                self.predict()
+            }
+        }
+    }
+    
     func predict() {
-        guard let nsImage = inputImage, let pixelBuffer = buffer(from: nsImage) else {
+        guard let url = capturedImageURL,
+              let image = NSImage(contentsOf: url),
+              let pixelBuffer = buffer(from: image) else {
             predictionResult = "Konversi gambar gagal"
             return
         }
@@ -120,17 +135,6 @@ struct StagesScreenView: View {
             print(predictionResult)
         } catch {
             predictionResult = "Prediksi gagal: \(error.localizedDescription)"
-        }
-    }
-    
-    func capturePhoto() {
-        cameraViewController?.capturePhoto { image in
-            self.image = image
-            if let image = image, let data = image.tiffRepresentation {
-                let filename = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("captured_photo.tiff")
-                try? data.write(to: filename)
-                print(filename)
-            }
         }
     }
 }
