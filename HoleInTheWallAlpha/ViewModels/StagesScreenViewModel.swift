@@ -17,8 +17,18 @@ class StagesScreenViewModel: ObservableObject {
     @Published var showModal = false
     @Published var isPredictionSuccessful = false
     
-    let model = Pose1Model() // Nama model yang dihasilkan oleh Xcode
+    let model: Pose1Model
     private var timer: Timer?
+    
+    init() {
+        do {
+            let configuration = MLModelConfiguration()
+            model = try Pose1Model(configuration: configuration)
+            print("Model successfully initialized.")
+        } catch {
+            fatalError("Error initializing model: \(error)")
+        }
+    }
     
     func playBackgroundMusic() {
         MusicPlayer.shared.stopBackgroundMusic()
