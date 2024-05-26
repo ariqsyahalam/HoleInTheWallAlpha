@@ -15,8 +15,19 @@ class StagesScreenViewModel: ObservableObject {
     @Published var cameraViewController: CameraViewController?
     @Published var capturedImageURL: URL?
     
+    let musicPlayer = MusicPlayer()
     let model = Pose1Model() // Nama model yang dihasilkan oleh Xcode
     private var timer: Timer?
+    
+    func playBackgroundMusic() {
+        musicPlayer.playBackgroundMusic(musicName: "gameplay", extensionType: "mp3")
+        print("Background music started.")
+    }
+    
+    func stopBackgroundMusic() {
+        musicPlayer.audioPlayer?.stop()
+        print("Background music stopped.")
+    }
     
     func startTimer() {
         timer?.invalidate() // Invalidate any existing timer
@@ -27,7 +38,7 @@ class StagesScreenViewModel: ObservableObject {
                 self.timeRemaining -= 1
                 print("Time remaining: \(self.timeRemaining) seconds")
             } else {
-                timer.invalidate()  // Stop the timer when it reaches 0
+                timer.invalidate()
                 print("Timer finished. Capturing photo...")
                 self.capturePhoto()
             }
@@ -57,7 +68,7 @@ class StagesScreenViewModel: ObservableObject {
         }
         
         do {
-            let input = ModelPose1Input(image: pixelBuffer)
+            let input = Pose1ModelInput(image: pixelBuffer)
             let prediction = try model.prediction(input: input)
             predictionResult = prediction.target
             print("Prediction result: \(predictionResult)")

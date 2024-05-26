@@ -12,7 +12,7 @@ struct HoleInTheWallAlphaApp: App {
 
     var body: some Scene {
         WindowGroup {
-            StartScreenView()
+            StartView()
         }
     }
 }
