@@ -14,19 +14,16 @@ class StagesScreenViewModel: ObservableObject {
     @Published var image: NSImage?
     @Published var cameraViewController: CameraViewController?
     @Published var capturedImageURL: URL?
+    @Published var showModal = false
+    @Published var isPredictionSuccessful = false
     
-    let musicPlayer = MusicPlayer()
     let model = Pose1Model() // Nama model yang dihasilkan oleh Xcode
     private var timer: Timer?
     
     func playBackgroundMusic() {
-        musicPlayer.playBackgroundMusic(musicName: "gameplay", extensionType: "mp3")
+        MusicPlayer.shared.stopBackgroundMusic()
+        MusicPlayer.shared.playBackgroundMusic(musicName: "countdown", extensionType: "mp3")
         print("Background music started.")
-    }
-    
-    func stopBackgroundMusic() {
-        musicPlayer.audioPlayer?.stop()
-        print("Background music stopped.")
     }
     
     func startTimer() {
@@ -38,7 +35,7 @@ class StagesScreenViewModel: ObservableObject {
                 self.timeRemaining -= 1
                 print("Time remaining: \(self.timeRemaining) seconds")
             } else {
-                timer.invalidate()
+                timer.invalidate()  // Stop the timer when it reaches 0
                 print("Timer finished. Capturing photo...")
                 self.capturePhoto()
             }
@@ -72,9 +69,23 @@ class StagesScreenViewModel: ObservableObject {
             let prediction = try model.prediction(input: input)
             predictionResult = prediction.target
             print("Prediction result: \(predictionResult)")
+            isPredictionSuccessful = predictionResult.lowercased() == "success"
+            showModal = true
         } catch {
             predictionResult = "Prediksi gagal: \(error.localizedDescription)"
             print("Prediction failed: \(error.localizedDescription)")
+            isPredictionSuccessful = false
+            showModal = true
         }
+    }
+    
+    func retryStage() {
+        showModal = false
+        startTimer()
+    }
+    
+    func goToStartScreen() {
+        showModal = false
+        // Logika untuk kembali ke halaman StartScreen
     }
 }

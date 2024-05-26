@@ -15,7 +15,7 @@ struct StartView: View {
             ZStack {
                 // Background
                 Group {
-                    Image("bgStage")
+                    Image("homebg")
                         .ignoresSafeArea()
                 }
                 

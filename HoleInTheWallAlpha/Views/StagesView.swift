@@ -10,7 +10,8 @@ import CoreML
 
 struct StagesView: View {
     @StateObject private var viewModel = StagesScreenViewModel()
-
+    @Environment(\.presentationMode) var presentationMode
+    
     var body: some View {
         ZStack(alignment: .center) {
             // Background
@@ -20,12 +21,12 @@ struct StagesView: View {
                     .offset(CGSize(width: 10, height: 76.0))
                 Image("layer1")
                     .ignoresSafeArea()
-
+                
                 Image("stagebg")
                     .ignoresSafeArea()
             }
             
-//             Foreground
+            //             Foreground
             VStack(alignment: .leading) {
                 HStack {
                     Spacer()
@@ -82,7 +83,20 @@ struct StagesView: View {
         }
         .ignoresSafeArea()
         .onAppear {
+            viewModel.playBackgroundMusic()
             viewModel.startTimer()  // Start the timer when the view appears
+        }
+        .alert(isPresented: $viewModel.showModal) {
+            Alert(
+                title: Text(viewModel.isPredictionSuccessful ? "Success!" : "Try Again :("),
+                message: Text(viewModel.predictionResult),
+                primaryButton: .default(Text("Retry")) {
+                    viewModel.retryStage()
+                },
+                secondaryButton: .cancel(Text("Go to Start")) {
+                    presentationMode.wrappedValue.dismiss()
+                }
+            )
         }
     }
 }

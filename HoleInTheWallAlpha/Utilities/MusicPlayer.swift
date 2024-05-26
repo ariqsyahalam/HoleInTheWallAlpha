@@ -9,7 +9,13 @@ import Foundation
 import AVFAudio
 
 class MusicPlayer: NSObject, AVAudioPlayerDelegate {
+    static let shared = MusicPlayer()
+    
     var audioPlayer: AVAudioPlayer?
+    
+    override init() {
+        super.init()
+    }
 
     func playBackgroundMusic(musicName: String, extensionType: String) {
         guard let url = Bundle.main.url(forResource: musicName, withExtension: extensionType) else {

@@ -8,15 +8,16 @@
 import SwiftUI
 
 class StartScreenViewModel: ObservableObject {
-    let musicPlayer = MusicPlayer()
+//    let musicPlayer = MusicPlayer()
     
     func playBackgroundMusic() {
-        musicPlayer.playBackgroundMusic(musicName: "gameplay", extensionType: "mp3")
+        MusicPlayer.shared.stopBackgroundMusic()
+        MusicPlayer.shared.playBackgroundMusic(musicName: "gameplay", extensionType: "mp3")
         print("Background music started.")
     }
     
-    func stopBackgroundMusic() {
-        musicPlayer.audioPlayer?.stop()
-        print("Background music stopped.")
-    }
+//    func stopBackgroundMusic() {
+//        MusicPlayer.shared.audioPlayer?.stop()
+//        print("Background music stopped.")
+//    }
 }

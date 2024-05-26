@@ -23,7 +23,7 @@
 		44EE7E422C0258C70047D443 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EE7E412C0258C70047D443 /* CameraViewController.swift */; };
 		44EE7E442C0259A50047D443 /* ImageProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EE7E432C0259A50047D443 /* ImageProcessing.swift */; };
 		44EE7E462C0271DC0047D443 /* gameplay.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 44EE7E452C0271DC0047D443 /* gameplay.mp3 */; };
-		44EE7E492C02D43B0047D443 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EE7E482C02D43B0047D443 /* ResultView.swift */; };
+		44EE7E502C02F0A60047D443 /* countdown.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 44EE7E4F2C02F0A60047D443 /* countdown.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,7 +46,7 @@
 		44EE7E412C0258C70047D443 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		44EE7E432C0259A50047D443 /* ImageProcessing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProcessing.swift; sourceTree = "<group>"; };
 		44EE7E452C0271DC0047D443 /* gameplay.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = gameplay.mp3; sourceTree = "<group>"; };
-		44EE7E482C02D43B0047D443 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
+		44EE7E4F2C02F0A60047D443 /* countdown.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = countdown.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +96,6 @@
 				44EE7E472C02D41D0047D443 /* Builder */,
 				447C78852BFB168B0066D390 /* StartView.swift */,
 				447C787D2BFB11790066D390 /* StagesView.swift */,
-				44EE7E482C02D43B0047D443 /* ResultView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -169,6 +168,7 @@
 		44EE7E4C2C02D6980047D443 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				44EE7E4F2C02F0A60047D443 /* countdown.mp3 */,
 				44EE7E452C0271DC0047D443 /* gameplay.mp3 */,
 			);
 			path = Sounds;
@@ -248,6 +248,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44EE7E502C02F0A60047D443 /* countdown.mp3 in Resources */,
 				44EE7E462C0271DC0047D443 /* gameplay.mp3 in Resources */,
 				447C78732BFB0FAB0066D390 /* Assets.xcassets in Resources */,
 			);
@@ -265,7 +266,6 @@
 				447C788A2BFB19D20066D390 /* StageModel.swift in Sources */,
 				447C78A12BFC85EA0066D390 /* AButtonStyle.swift in Sources */,
 				447C788E2BFC53470066D390 /* CameraView.swift in Sources */,
-				44EE7E492C02D43B0047D443 /* ResultView.swift in Sources */,
 				447C78A52BFC865A0066D390 /* ATextStyle.swift in Sources */,
 				447C787E2BFB11790066D390 /* StagesView.swift in Sources */,
 				44EE7E302C0255F90047D443 /* StartScreenViewModel.swift in Sources */,
@@ -408,7 +408,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"HoleInTheWallAlpha/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 87N548UZ24;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -436,7 +436,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"HoleInTheWallAlpha/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 87N548UZ24;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
