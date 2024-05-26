@@ -1,5 +1,5 @@
 //
-//  CameraController.swift
+//  CameraViewController.swift
 //  HoleInTheWallAlpha
 //
 //  Created by Reyhan Ariq Syahalam on 22/05/24.
@@ -8,36 +8,46 @@
 import SwiftUI
 import AVFoundation
 
+// Full GPT
 class CameraViewController: NSViewController, AVCapturePhotoCaptureDelegate {
     var captureSession: AVCaptureSession?
     var photoOutput: AVCapturePhotoOutput?
+    private var photoCaptureCompletionBlock: ((NSImage?) -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCamera()
     }
     
-    private func setupCamera() {
+    func setupCamera() {
         captureSession = AVCaptureSession()
         captureSession?.sessionPreset = .high
         
-        guard let videoDevice = AVCaptureDevice.default(for: .video) else { return }
-        let videoDeviceInput = try? AVCaptureDeviceInput(device: videoDevice)
+        guard let videoDevice = AVCaptureDevice.default(for: .video) else {
+            print("No video device found")
+            return
+        }
         
-        if let captureSession = captureSession,
-           captureSession.canAddInput(videoDeviceInput!) {
-            captureSession.addInput(videoDeviceInput!)
+        do {
+            let videoDeviceInput = try AVCaptureDeviceInput(device: videoDevice)
+            if let captureSession = captureSession, captureSession.canAddInput(videoDeviceInput) {
+                captureSession.addInput(videoDeviceInput)
+                print("Video device input added to capture session")
+            }
+        } catch {
+            print("Error setting up video device input: \(error)")
         }
         
         photoOutput = AVCapturePhotoOutput()
-        if let captureSession = captureSession,
-           captureSession.canAddOutput(photoOutput!) {
+        if let captureSession = captureSession, captureSession.canAddOutput(photoOutput!) {
             captureSession.addOutput(photoOutput!)
+            print("Photo output added to capture session")
         }
         
         let videoLayer = AVCaptureVideoPreviewLayer(session: captureSession!)
         videoLayer.frame = view.bounds
         videoLayer.videoGravity = .resizeAspectFill
+        videoLayer.autoresizingMask = [.layerWidthSizable, .layerHeightSizable]
         videoLayer.setAffineTransform(CGAffineTransform(scaleX: -1, y: 1))
         
         view.wantsLayer = true
@@ -45,22 +55,31 @@ class CameraViewController: NSViewController, AVCapturePhotoCaptureDelegate {
         view.layer?.addSublayer(videoLayer)
         
         captureSession?.startRunning()
+        print("Capture session started")
     }
     
     func capturePhoto(completion: @escaping (NSImage?) -> Void) {
         let settings = AVCapturePhotoSettings()
+        photoCaptureCompletionBlock = completion
         photoOutput?.capturePhoto(with: settings, delegate: self)
-        self.photoCaptureCompletionBlock = completion
+        print("Photo capture initiated")
     }
     
-    private var photoCaptureCompletionBlock: ((NSImage?) -> Void)?
-    
     func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
-        guard let imageData = photo.fileDataRepresentation() else {
-            self.photoCaptureCompletionBlock?(nil)
+        if let error = error {
+            print("Error capturing photo: \(error)")
+            photoCaptureCompletionBlock?(nil)
             return
         }
+        
+        guard let imageData = photo.fileDataRepresentation() else {
+            print("No image data representation")
+            photoCaptureCompletionBlock?(nil)
+            return
+        }
+        
         let image = NSImage(data: imageData)
-        self.photoCaptureCompletionBlock?(image)
+        print("Photo capture completed")
+        photoCaptureCompletionBlock?(image)
     }
 }

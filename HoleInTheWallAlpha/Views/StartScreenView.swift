@@ -13,11 +13,14 @@ struct StartScreenView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                Group{ // Background
+                // Background
+                Group {
                     Image("bgStage")
                         .ignoresSafeArea()
                 }
-                Group{ // Foreground
+                
+                // Foreground
+                Group {
                     VStack {
                         VStack(spacing: -36) {
                             Text("HOLE")
@@ -27,7 +30,6 @@ struct StartScreenView: View {
                                     Font.custom("SF Mono", size: 96)
                                         .weight(.light)
                                 )
-                            
                                 .kerning(27.84)
                                 .multilineTextAlignment(.center)
                                 .foregroundColor(.white)
@@ -49,27 +51,29 @@ struct StartScreenView: View {
                                 .multilineTextAlignment(.center)
                                 .foregroundColor(.black)
                         }
+                        .gesture(TapGesture().onEnded({
+                            musicPlayer.audioPlayer?.stop()
+                        }))
                         .padding(.horizontal, 32)
                         .padding(.vertical, 16)
                         .frame(width: 496, alignment: .center)
                         .background(Color(red: 0.91, green: 0.67, blue: 0.19))
-                        
                         .shadow(color: Color(red: 0.72, green: 0.69, blue: 0.69), radius: 0, x: 8, y: 8)
                     }
                     .padding(.bottom, 240)
                 }
-                .navigationTitle("Start Screen")
             }
         }
         .onAppear {
-//            musicPlayer.playBackgroundMusic(musicName: "tanteculikakudong", extensionType: "mp3")
+            // Play background music
+            musicPlayer.playBackgroundMusic(musicName: "gameplay", extensionType: "mp3")
         }
         .onDisappear{
-            
+            // Stop background music
+            musicPlayer.audioPlayer?.stop()
         }
         .ignoresSafeArea()
     }
-    
 }
 
 #Preview {

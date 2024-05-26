@@ -33,7 +33,6 @@ struct CameraView: NSViewControllerRepresentable {
     func updateNSViewController(_ nsViewController: CameraViewController, context: Context) {}
 }
 
-
-//#Preview {
-//    CameraView(cameraViewController: <#Binding<CameraViewController?>#>)
-//}
+#Preview {
+    CameraView(cameraViewController: .constant(nil))
+}

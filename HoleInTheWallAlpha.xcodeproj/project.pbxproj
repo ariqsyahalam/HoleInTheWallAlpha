@@ -13,18 +13,24 @@
 		447C78762BFB0FAB0066D390 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 447C78752BFB0FAB0066D390 /* Preview Assets.xcassets */; };
 		447C787E2BFB11790066D390 /* StagesScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447C787D2BFB11790066D390 /* StagesScreenView.swift */; };
 		447C78862BFB168B0066D390 /* StartScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447C78852BFB168B0066D390 /* StartScreenView.swift */; };
-		447C78882BFB18DC0066D390 /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447C78872BFB18DC0066D390 /* Shape.swift */; };
 		447C788A2BFB19D20066D390 /* StageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447C78892BFB19D20066D390 /* StageModel.swift */; };
 		447C788E2BFC53470066D390 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447C788D2BFC53470066D390 /* CameraView.swift */; };
-		447C78982BFC73460066D390 /* PoseDetectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447C78972BFC73460066D390 /* PoseDetectionViewModel.swift */; };
 		447C78A12BFC85EA0066D390 /* AButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447C78A02BFC85EA0066D390 /* AButtonStyle.swift */; };
 		447C78A52BFC865A0066D390 /* ATextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447C78A42BFC865A0066D390 /* ATextStyle.swift */; };
-		447C78AB2BFDBB2A0066D390 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447C78AA2BFDBB2A0066D390 /* CameraController.swift */; };
-		447C78AD2BFDCA330066D390 /* TimerUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447C78AC2BFDCA330066D390 /* TimerUtil.swift */; };
 		447C78AF2BFDCC360066D390 /* MusicPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447C78AE2BFDCC360066D390 /* MusicPlayer.swift */; };
 		447C78B12BFDCD270066D390 /* bgSound-start.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 447C78B02BFDCD270066D390 /* bgSound-start.mp3 */; };
 		447C78B32BFDD5540066D390 /* tanteculikakudong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 447C78B22BFDD5540066D390 /* tanteculikakudong.mp3 */; };
-		447C78B52BFF632B0066D390 /* ModelPose1.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 447C78B42BFF632B0066D390 /* ModelPose1.mlmodel */; };
+		447C78B52BFF632B0066D390 /* Pose1Model.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 447C78B42BFF632B0066D390 /* Pose1Model.mlmodel */; };
+		44EE7E302C0255F90047D443 /* StartScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EE7E2F2C0255F90047D443 /* StartScreenViewModel.swift */; };
+		44EE7E322C0256160047D443 /* StagesScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EE7E312C0256160047D443 /* StagesScreenViewModel.swift */; };
+		44EE7E342C02562C0047D443 /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EE7E332C02562C0047D443 /* CameraViewModel.swift */; };
+		44EE7E362C0256440047D443 /* PoseDetectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EE7E352C0256440047D443 /* PoseDetectionViewModel.swift */; };
+		44EE7E382C0256680047D443 /* PoseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EE7E372C0256680047D443 /* PoseModel.swift */; };
+		44EE7E3B2C02568E0047D443 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EE7E3A2C02568E0047D443 /* View+Extensions.swift */; };
+		44EE7E3F2C02571F0047D443 /* PoseDetectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EE7E3E2C02571F0047D443 /* PoseDetectionService.swift */; };
+		44EE7E422C0258C70047D443 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EE7E412C0258C70047D443 /* CameraViewController.swift */; };
+		44EE7E442C0259A50047D443 /* ImageProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EE7E432C0259A50047D443 /* ImageProcessing.swift */; };
+		44EE7E462C0271DC0047D443 /* gameplay.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 44EE7E452C0271DC0047D443 /* gameplay.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,18 +43,24 @@
 		447C787D2BFB11790066D390 /* StagesScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StagesScreenView.swift; sourceTree = "<group>"; };
 		447C787F2BFB13040066D390 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		447C78852BFB168B0066D390 /* StartScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreenView.swift; sourceTree = "<group>"; };
-		447C78872BFB18DC0066D390 /* Shape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shape.swift; sourceTree = "<group>"; };
 		447C78892BFB19D20066D390 /* StageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageModel.swift; sourceTree = "<group>"; };
 		447C788D2BFC53470066D390 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
-		447C78972BFC73460066D390 /* PoseDetectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseDetectionViewModel.swift; sourceTree = "<group>"; };
 		447C78A02BFC85EA0066D390 /* AButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AButtonStyle.swift; sourceTree = "<group>"; };
 		447C78A42BFC865A0066D390 /* ATextStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATextStyle.swift; sourceTree = "<group>"; };
-		447C78AA2BFDBB2A0066D390 /* CameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
-		447C78AC2BFDCA330066D390 /* TimerUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerUtil.swift; sourceTree = "<group>"; };
 		447C78AE2BFDCC360066D390 /* MusicPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayer.swift; sourceTree = "<group>"; };
 		447C78B02BFDCD270066D390 /* bgSound-start.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "bgSound-start.mp3"; sourceTree = "<group>"; };
 		447C78B22BFDD5540066D390 /* tanteculikakudong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tanteculikakudong.mp3; sourceTree = "<group>"; };
-		447C78B42BFF632B0066D390 /* ModelPose1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ModelPose1.mlmodel; sourceTree = "<group>"; };
+		447C78B42BFF632B0066D390 /* Pose1Model.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Pose1Model.mlmodel; sourceTree = "<group>"; };
+		44EE7E2F2C0255F90047D443 /* StartScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreenViewModel.swift; sourceTree = "<group>"; };
+		44EE7E312C0256160047D443 /* StagesScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StagesScreenViewModel.swift; sourceTree = "<group>"; };
+		44EE7E332C02562C0047D443 /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
+		44EE7E352C0256440047D443 /* PoseDetectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseDetectionViewModel.swift; sourceTree = "<group>"; };
+		44EE7E372C0256680047D443 /* PoseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseModel.swift; sourceTree = "<group>"; };
+		44EE7E3A2C02568E0047D443 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
+		44EE7E3E2C02571F0047D443 /* PoseDetectionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseDetectionService.swift; sourceTree = "<group>"; };
+		44EE7E412C0258C70047D443 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		44EE7E432C0259A50047D443 /* ImageProcessing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProcessing.swift; sourceTree = "<group>"; };
+		44EE7E452C0271DC0047D443 /* gameplay.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = gameplay.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,18 +93,23 @@
 		447C786D2BFB0FAA0066D390 /* HoleInTheWallAlpha */ = {
 			isa = PBXGroup;
 			children = (
-				447C78B42BFF632B0066D390 /* ModelPose1.mlmodel */,
-				447C786E2BFB0FAA0066D390 /* HoleInTheWallAlphaApp.swift */,
-				447C78702BFB0FAA0066D390 /* ContentView.swift */,
 				447C78772BFB0FAB0066D390 /* HoleInTheWallAlpha.entitlements */,
-				447C787F2BFB13040066D390 /* Info.plist */,
-				447C78722BFB0FAB0066D390 /* Assets.xcassets */,
+				447C78B42BFF632B0066D390 /* Pose1Model.mlmodel */,
 				447C78B02BFDCD270066D390 /* bgSound-start.mp3 */,
 				447C78B22BFDD5540066D390 /* tanteculikakudong.mp3 */,
-				447C78742BFB0FAB0066D390 /* Preview Content */,
+				44EE7E452C0271DC0047D443 /* gameplay.mp3 */,
+				447C787F2BFB13040066D390 /* Info.plist */,
+				447C78702BFB0FAA0066D390 /* ContentView.swift */,
+				447C786E2BFB0FAA0066D390 /* HoleInTheWallAlphaApp.swift */,
+				447C78722BFB0FAB0066D390 /* Assets.xcassets */,
+				44EE7E402C0258AB0047D443 /* Controllers */,
+				44EE7E2D2C0252E10047D443 /* Helpers */,
 				447C78842BFB13DF0066D390 /* Models */,
-				447C78832BFB13D80066D390 /* Views */,
+				447C78742BFB0FAB0066D390 /* Preview Content */,
+				44EE7E2B2C0252970047D443 /* Services */,
+				44EE7E2C2C0252B00047D443 /* Utilities */,
 				447C78962BFC72F90066D390 /* ViewModels */,
+				447C78832BFB13D80066D390 /* Views */,
 			);
 			path = HoleInTheWallAlpha;
 			sourceTree = "<group>";
@@ -108,9 +125,9 @@
 		447C78832BFB13D80066D390 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				447C789B2BFC74D10066D390 /* Styles */,
-				447C78922BFC6CE00066D390 /* Scenes */,
-				447C78932BFC6CED0066D390 /* Screens */,
+				447C788D2BFC53470066D390 /* CameraView.swift */,
+				447C787D2BFB11790066D390 /* StagesScreenView.swift */,
+				447C78852BFB168B0066D390 /* StartScreenView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -118,36 +135,19 @@
 		447C78842BFB13DF0066D390 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				447C78872BFB18DC0066D390 /* Shape.swift */,
 				447C78892BFB19D20066D390 /* StageModel.swift */,
+				44EE7E372C0256680047D443 /* PoseModel.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		447C78922BFC6CE00066D390 /* Scenes */ = {
-			isa = PBXGroup;
-			children = (
-				447C788D2BFC53470066D390 /* CameraView.swift */,
-			);
-			path = Scenes;
-			sourceTree = "<group>";
-		};
-		447C78932BFC6CED0066D390 /* Screens */ = {
-			isa = PBXGroup;
-			children = (
-				447C787D2BFB11790066D390 /* StagesScreenView.swift */,
-				447C78852BFB168B0066D390 /* StartScreenView.swift */,
-			);
-			path = Screens;
 			sourceTree = "<group>";
 		};
 		447C78962BFC72F90066D390 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				447C78972BFC73460066D390 /* PoseDetectionViewModel.swift */,
-				447C78AA2BFDBB2A0066D390 /* CameraController.swift */,
-				447C78AC2BFDCA330066D390 /* TimerUtil.swift */,
-				447C78AE2BFDCC360066D390 /* MusicPlayer.swift */,
+				44EE7E2F2C0255F90047D443 /* StartScreenViewModel.swift */,
+				44EE7E312C0256160047D443 /* StagesScreenViewModel.swift */,
+				44EE7E332C02562C0047D443 /* CameraViewModel.swift */,
+				44EE7E352C0256440047D443 /* PoseDetectionViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -155,10 +155,52 @@
 		447C789B2BFC74D10066D390 /* Styles */ = {
 			isa = PBXGroup;
 			children = (
-				447C78A02BFC85EA0066D390 /* AButtonStyle.swift */,
 				447C78A42BFC865A0066D390 /* ATextStyle.swift */,
+				447C78A02BFC85EA0066D390 /* AButtonStyle.swift */,
 			);
 			path = Styles;
+			sourceTree = "<group>";
+		};
+		44EE7E2B2C0252970047D443 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				44EE7E3E2C02571F0047D443 /* PoseDetectionService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		44EE7E2C2C0252B00047D443 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				44EE7E2E2C0253000047D443 /* Extensions */,
+				447C789B2BFC74D10066D390 /* Styles */,
+				44EE7E432C0259A50047D443 /* ImageProcessing.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		44EE7E2D2C0252E10047D443 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				447C78AE2BFDCC360066D390 /* MusicPlayer.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		44EE7E2E2C0253000047D443 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				44EE7E3A2C02568E0047D443 /* View+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		44EE7E402C0258AB0047D443 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				44EE7E412C0258C70047D443 /* CameraViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,6 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				447C78B32BFDD5540066D390 /* tanteculikakudong.mp3 in Resources */,
+				44EE7E462C0271DC0047D443 /* gameplay.mp3 in Resources */,
 				447C78762BFB0FAB0066D390 /* Preview Assets.xcassets in Resources */,
 				447C78B12BFDCD270066D390 /* bgSound-start.mp3 in Resources */,
 				447C78732BFB0FAB0066D390 /* Assets.xcassets in Resources */,
@@ -233,19 +276,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44EE7E442C0259A50047D443 /* ImageProcessing.swift in Sources */,
 				447C78AF2BFDCC360066D390 /* MusicPlayer.swift in Sources */,
 				447C788A2BFB19D20066D390 /* StageModel.swift in Sources */,
 				447C78A12BFC85EA0066D390 /* AButtonStyle.swift in Sources */,
-				447C78882BFB18DC0066D390 /* Shape.swift in Sources */,
 				447C788E2BFC53470066D390 /* CameraView.swift in Sources */,
 				447C78A52BFC865A0066D390 /* ATextStyle.swift in Sources */,
 				447C787E2BFB11790066D390 /* StagesScreenView.swift in Sources */,
-				447C78AB2BFDBB2A0066D390 /* CameraController.swift in Sources */,
-				447C78982BFC73460066D390 /* PoseDetectionViewModel.swift in Sources */,
+				44EE7E302C0255F90047D443 /* StartScreenViewModel.swift in Sources */,
+				44EE7E322C0256160047D443 /* StagesScreenViewModel.swift in Sources */,
+				44EE7E382C0256680047D443 /* PoseModel.swift in Sources */,
 				447C78712BFB0FAA0066D390 /* ContentView.swift in Sources */,
-				447C78AD2BFDCA330066D390 /* TimerUtil.swift in Sources */,
-				447C78B52BFF632B0066D390 /* ModelPose1.mlmodel in Sources */,
+				447C78B52BFF632B0066D390 /* Pose1Model.mlmodel in Sources */,
 				447C786F2BFB0FAA0066D390 /* HoleInTheWallAlphaApp.swift in Sources */,
+				44EE7E362C0256440047D443 /* PoseDetectionViewModel.swift in Sources */,
+				44EE7E342C02562C0047D443 /* CameraViewModel.swift in Sources */,
+				44EE7E3F2C02571F0047D443 /* PoseDetectionService.swift in Sources */,
+				44EE7E3B2C02568E0047D443 /* View+Extensions.swift in Sources */,
+				44EE7E422C0258C70047D443 /* CameraViewController.swift in Sources */,
 				447C78862BFB168B0066D390 /* StartScreenView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

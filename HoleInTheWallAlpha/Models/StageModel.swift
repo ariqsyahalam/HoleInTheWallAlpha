@@ -7,6 +7,12 @@
 
 import Foundation
 
-class StageModel {
-    var name: String?
+class StageModel: Identifiable {
+    var id = UUID()
+    var name: String
+    
+    init(name: String) {
+        self.name = name
+        print("StageModel initialized with name: \(name)")
+    }
 }
