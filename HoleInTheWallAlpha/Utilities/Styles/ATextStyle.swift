@@ -39,9 +39,12 @@ extension View {
         case .button:
             return AnyView(
                 self
-                    .font(Font.custom("Enriqueta", size: 48).weight(.bold))
+                    .font(
+                        Font.custom("SF Mono", size: 32)
+                            .weight(.bold)
+                    )
                     .multilineTextAlignment(.center)
-                    .foregroundColor(Color(red: 0.42, green: 0.29, blue: 0.29))
+                    .foregroundColor(.black)
             )
         case .h1, .h2, .h3, .h4, .h5, .h6, .h7:
             return AnyView(
@@ -56,7 +59,13 @@ extension View {
         case .caption, .subtitle:
             return AnyView(
                 self
-                    .font(Font.custom("Enriqueta", size: 48).weight(.bold))
+                    .font(
+                        Font.custom("SF Mono", size: 96)
+                            .weight(.light)
+                    )
+                    .kerning(27.84)
+                    .multilineTextAlignment(.center)
+                    .foregroundColor(.white)
             )
         case .title:
             return AnyView(
@@ -70,6 +79,8 @@ extension View {
         }
     }
 }
+
+//TO DO: masih ada comment
 
 // Custom text style example usage:
 // Text("Hello, World!")

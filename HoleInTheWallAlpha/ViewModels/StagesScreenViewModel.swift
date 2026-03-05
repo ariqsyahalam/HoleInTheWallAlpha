@@ -16,6 +16,7 @@ class StagesScreenViewModel: ObservableObject {
     @Published var capturedImageURL: URL?
     @Published var showModal = false
     @Published var isPredictionSuccessful = false
+    @Published var listStages: [StageModel] = []
     
     let model: Pose1Model
     private var timer: Timer?
@@ -24,6 +25,7 @@ class StagesScreenViewModel: ObservableObject {
         do {
             let configuration = MLModelConfiguration()
             model = try Pose1Model(configuration: configuration)
+            listStages.append(StageModel(name: "Stage 1", level: "Easy", score: 10, frame: "layer1" ))
             print("Model successfully initialized.")
         } catch {
             fatalError("Error initializing model: \(error)")
@@ -96,6 +98,6 @@ class StagesScreenViewModel: ObservableObject {
     
     func goToStartScreen() {
         showModal = false
-        // Logika untuk kembali ke halaman StartScreen
+        // Logika untuk kembali ke halaman StartScreen // TO DO: masih ada comment
     }
 }

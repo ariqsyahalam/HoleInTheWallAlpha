@@ -8,6 +8,8 @@
 import Cocoa
 import CoreVideo
 
+// Full GPT
+// harus didalam struct
 func buffer(from image: NSImage) -> CVPixelBuffer? {
     guard let tiffData = image.tiffRepresentation,
           let bitmapImage = NSBitmapImageRep(data: tiffData) else {

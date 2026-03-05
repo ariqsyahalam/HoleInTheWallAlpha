@@ -5,6 +5,7 @@
 //  Created by Reyhan Ariq Syahalam on 20/05/24.
 //
 
+
 import SwiftUI
 import CoreML
 
@@ -19,7 +20,7 @@ struct StagesView: View {
                 CameraView(cameraViewController: $viewModel.cameraViewController)
                     .frame(width: 688, height: 718)
                     .offset(CGSize(width: 10, height: 76.0))
-                Image("layer1")
+                Image(viewModel.listStages.first!.frame)
                     .ignoresSafeArea()
                 
                 Image("stagebg")

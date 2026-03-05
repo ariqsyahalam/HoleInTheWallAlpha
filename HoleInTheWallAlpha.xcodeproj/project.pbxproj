@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		441AB8972C044F4500B4F7D7 /* SwiftLintFramework in Frameworks */ = {isa = PBXBuildFile; productRef = 441AB8962C044F4500B4F7D7 /* SwiftLintFramework */; };
 		447C786F2BFB0FAA0066D390 /* HoleInTheWallAlphaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447C786E2BFB0FAA0066D390 /* HoleInTheWallAlphaApp.swift */; };
 		447C78732BFB0FAB0066D390 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 447C78722BFB0FAB0066D390 /* Assets.xcassets */; };
 		447C787E2BFB11790066D390 /* StagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447C787D2BFB11790066D390 /* StagesView.swift */; };
@@ -54,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				441AB8972C044F4500B4F7D7 /* SwiftLintFramework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,6 +208,9 @@
 			dependencies = (
 			);
 			name = HoleInTheWallAlpha;
+			packageProductDependencies = (
+				441AB8962C044F4500B4F7D7 /* SwiftLintFramework */,
+			);
 			productName = HoleInTheWallAlpha;
 			productReference = 447C786B2BFB0FAA0066D390 /* HoleInTheWallAlpha.app */;
 			productType = "com.apple.product-type.application";
@@ -234,6 +239,9 @@
 				Base,
 			);
 			mainGroup = 447C78622BFB0FAA0066D390;
+			packageReferences = (
+				441AB8952C044F4500B4F7D7 /* XCRemoteSwiftPackageReference "SwiftLint" */,
+			);
 			productRefGroup = 447C786C2BFB0FAA0066D390 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -477,6 +485,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		441AB8952C044F4500B4F7D7 /* XCRemoteSwiftPackageReference "SwiftLint" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/SwiftLint";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.55.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		441AB8962C044F4500B4F7D7 /* SwiftLintFramework */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 441AB8952C044F4500B4F7D7 /* XCRemoteSwiftPackageReference "SwiftLint" */;
+			productName = SwiftLintFramework;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 447C78632BFB0FAA0066D390 /* Project object */;
 }

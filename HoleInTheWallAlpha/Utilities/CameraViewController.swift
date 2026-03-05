@@ -8,7 +8,7 @@
 import SwiftUI
 import AVFoundation
 
-// Full GPT
+// Full GPT //TO DO: keren luhhh mantep bg
 class CameraViewController: NSViewController, AVCapturePhotoCaptureDelegate {
     var captureSession: AVCaptureSession?
     var photoOutput: AVCapturePhotoOutput?

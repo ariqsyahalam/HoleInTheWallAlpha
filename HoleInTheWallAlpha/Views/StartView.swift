@@ -26,20 +26,9 @@ struct StartView: View {
                             Text("HOLE")
                                 .aText(.title)
                             Text("IN THE")
-                                .font(
-                                    Font.custom("SF Mono", size: 96)
-                                        .weight(.light)
-                                )
-                                .kerning(27.84)
-                                .multilineTextAlignment(.center)
-                                .foregroundColor(.white)
+                                .aText(.subtitle)
                             Text("WALL")
-                                .font(
-                                    Font.custom("SF Mono", size: 200)
-                                        .weight(.bold)
-                                )
-                                .multilineTextAlignment(.center)
-                                .foregroundColor(.white)
+                                .aText(.title)
                         }
                         .padding(.bottom, 8)
                         .onDisappear{
